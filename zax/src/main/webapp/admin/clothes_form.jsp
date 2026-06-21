@@ -1,0 +1,14 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %><%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${empty clothes?'添加服装':'编辑服装'} - 智安行衣橱</title><link rel="stylesheet" href="${pageContext.request.contextPath}/css/admin.css"></head><body>
+<header class="admin-topbar"><h2>后台管理</h2><ul class="top-links"><li><a href="${pageContext.request.contextPath}/admin/dashboard">控制面板</a></li><li><a href="${pageContext.request.contextPath}/admin/clothes" class="active">服装管理</a></li><li><a href="${pageContext.request.contextPath}/admin/orders">订单管理</a></li><li><a href="${pageContext.request.contextPath}/admin/users">用户管理</a></li><li><a href="${pageContext.request.contextPath}/clothes">返回前台</a></li></ul></header>
+<div class="admin-main"><h1>${empty clothes?'添加服装':'编辑服装'}</h1><a href="${pageContext.request.contextPath}/admin/clothes" style="color:#7f8c9b;font-size:13px">&larr; 返回服装列表</a>
+<div class="form-panel" style="margin-top:18px"><form action="${pageContext.request.contextPath}/admin/clothes" method="post" enctype="multipart/form-data">
+<input type="hidden" name="action" value="${empty clothes?'add':'update'}">
+<c:if test="${not empty clothes}"><input type="hidden" name="id" value="${clothes.id}"><input type="hidden" name="existingImage" value="${clothes.imageUrl}"></c:if>
+<div class="form-row"><div class="form-group"><label>服装名称</label><input type="text" name="clothName" value="${clothes.name}" required></div><div class="form-group"><label>价格</label><input type="number" step="0.01" name="price" value="${clothes.price}" required></div></div>
+<div class="form-row"><div class="form-group"><label>分类</label><select name="category"><c:forEach items="${categories}" var="c"><option value="${c}" ${clothes.category eq c?'selected':''}>${c}</option></c:forEach></select></div><div class="form-group"><label>风格</label><input type="text" name="style" value="${clothes.style}"></div></div>
+<div class="form-row"><div class="form-group"><label>尺码</label><input type="text" name="size" value="${clothes.size}" placeholder="如: S|79,M|79,L|89"></div><div class="form-group"><label>库存</label><input type="number" name="stock" value="${clothes.stock}" required></div></div>
+<div class="form-group"><label>描述</label><textarea name="description">${clothes.description}</textarea></div>
+<div class="form-group"><label>图片</label><input type="file" name="clothImage"><c:if test="${not empty clothes.imageUrl}"><p style="font-size:12px;color:#7f8c9b;margin-top:4px">当前: ${clothes.imageUrl}</p></c:if></div>
+<button type="submit" class="btn btn-primary btn-block">${empty clothes?'添加服装':'保存修改'}</button>
+</form></div></div></body></html>

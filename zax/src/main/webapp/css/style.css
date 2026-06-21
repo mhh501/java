@@ -1,0 +1,125 @@
+/* zax: 沉浸式Hero · 毛玻璃导航 · 大卡片 */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#e8edf2;color:#2c3e50;overflow-x:hidden}
+a{text-decoration:none}
+
+/* Hero区域 */
+.hero{background:linear-gradient(135deg,#1a2d35 0%,#243b44 40%,#4a6d7c 100%);color:#fff;padding:60px 40px 40px;text-align:center;position:relative}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(transparent,#e8edf2)}
+.hero h1{font-size:36px;font-weight:800;margin-bottom:8px;letter-spacing:-1px}
+.hero p{font-size:15px;opacity:.7;margin-bottom:28px}
+.hero .hero-search{display:flex;gap:8px;max-width:700px;margin:0 auto;position:relative;z-index:10}
+.hero .hero-search input{flex:1;padding:14px 20px;border:none;border-radius:30px;font-size:15px;outline:none;box-shadow:0 4px 20px rgba(0,0,0,.15)}
+.hero .hero-search select{padding:14px 16px;border:none;border-radius:30px;font-size:14px;outline:none;background:#fff;box-shadow:0 4px 20px rgba(0,0,0,.15);color:#4a6d7c}
+.hero .hero-search button{padding:14px 28px;border:none;border-radius:30px;background:#4a6d7c;color:#fff;font-weight:700;cursor:pointer;font-size:15px;box-shadow:0 4px 20px rgba(74,109,124,.3);transition:.2s}
+.hero .hero-search button:hover{background:#385562;transform:translateY(-1px)}
+
+/* 毛玻璃导航 */
+.nav-bar{background:rgba(255,255,255,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:flex;justify-content:space-between;align-items:center;padding:0 40px;height:56px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(0,0,0,.05)}
+.nav-bar .logo{font-size:20px;font-weight:800;color:#1a2d35;letter-spacing:-.5px}
+.nav-bar .nav-links{display:flex;gap:4px;list-style:none}
+.nav-bar .nav-links a{padding:8px 18px;border-radius:20px;font-size:13px;font-weight:500;color:#556b78;transition:all .2s}
+.nav-bar .nav-links a:hover{background:#1a2d35;color:#fff}
+.nav-bar .user-info{font-size:13px;color:#4a6d7c;padding:6px 14px;background:rgba(74,109,124,.08);border-radius:20px;font-weight:600}
+
+/* 筛选标签 */
+.filter-bar{display:flex;gap:8px;padding:16px 40px;flex-wrap:wrap;justify-content:center;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.03)}
+.filter-bar .pill{padding:6px 18px;border-radius:20px;font-size:13px;font-weight:500;cursor:pointer;border:2px solid #d8e0e6;background:#fff;color:#556b78;transition:all .2s}
+.filter-bar .pill:hover,.filter-bar .pill.active{border-color:#4a6d7c;background:#e8edf2;color:#4a6d7c}
+
+/* 大卡片网格 */
+.container{padding:28px 40px;max-width:1200px;margin:0 auto}
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 4px 20px rgba(74,109,124,.06);transition:all .3s;position:relative}
+.card:hover{transform:translateY(-8px);box-shadow:0 16px 48px rgba(74,109,124,.12)}
+.card .card-img-wrap{position:relative;height:280px;overflow:hidden;background:linear-gradient(135deg,#d4dee3,#bcc8d0)}
+.card .card-img-wrap img{width:100%;height:100%;object-fit:cover}
+.card .card-overlay{position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff}
+.card .card-overlay h3{font-size:16px;font-weight:600;margin-bottom:4px}
+.card .card-overlay .card-meta{font-size:12px;opacity:.8}
+.card .card-info{padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+.card .card-info .price{font-size:22px;font-weight:700;color:#c0392b}
+.card .card-info .stock{font-size:12px;color:#7f8c9b}
+
+/* 按钮 */
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border:none;border-radius:25px;cursor:pointer;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s}
+.btn-primary{background:#4a6d7c;color:#fff}.btn-primary:hover{background:#385562;box-shadow:0 4px 15px rgba(74,109,124,.3)}
+.btn-outline{background:transparent;border:2px solid #4a6d7c;color:#4a6d7c;border-radius:25px}.btn-outline:hover{background:#4a6d7c;color:#fff}
+.btn-danger{background:#e74c3c;color:#fff;border-radius:25px}.btn-danger:hover{background:#c0392b}
+.btn-success{background:#27ae60;color:#fff;border-radius:25px}.btn-success:hover{background:#219a52}
+.btn-sm{padding:5px 14px;font-size:12px}
+.btn-lg{padding:14px 32px;font-size:15px;border-radius:30px}
+.btn-block{display:block;width:100%;text-align:center;justify-content:center}
+
+/* 详情页 */
+.detail-hero{background:linear-gradient(135deg,#1a2d35,#4a6d7c);color:#fff;padding:40px;display:flex;gap:40px;align-items:center}
+.detail-hero .detail-img{width:360px;height:360px;border-radius:20px;overflow:hidden;flex-shrink:0;box-shadow:0 8px 32px rgba(0,0,0,.3)}
+.detail-hero .detail-img img{width:100%;height:100%;object-fit:cover}
+.detail-hero .detail-img .placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:80px;background:rgba(255,255,255,.1)}
+.detail-hero .detail-main h2{font-size:32px;font-weight:800;margin-bottom:12px}
+.detail-hero .detail-main .tags{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.detail-hero .detail-main .tags span{background:rgba(255,255,255,.15);padding:4px 14px;border-radius:20px;font-size:13px}
+.detail-hero .price-hero{font-size:42px;font-weight:800;margin:20px 0}
+.detail-body{padding:32px 40px;display:flex;gap:40px;max-width:1200px;margin:0 auto}
+.detail-body .detail-desc{flex:1;line-height:1.8;color:#5a6b78;font-size:14px}
+.detail-body .detail-action{width:320px;flex-shrink:0;background:#fff;padding:24px;border-radius:16px;box-shadow:0 2px 12px rgba(74,109,124,.06)}
+.detail-body .detail-action .size-grid{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.size-tag{padding:8px 16px;border:2px solid #d8e0e6;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;transition:.2s;background:#fff;color:#4a5a65}
+.size-tag:hover,.size-tag.selected{border-color:#4a6d7c;background:#e8edf2;color:#4a6d7c}
+.qty-row{display:flex;align-items:center;gap:12px;margin:16px 0}
+.qty-row input{width:60px;padding:8px;text-align:center;border:2px solid #d8e0e6;border-radius:8px;font-size:14px}
+
+/* 购物车 */
+.cart-container{padding:28px 40px;max-width:1200px;margin:0 auto}
+.cart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.cart-tile{display:flex;align-items:center;gap:16px;background:#fff;padding:16px;border-radius:14px;box-shadow:0 2px 10px rgba(74,109,124,.04)}
+.cart-tile img{width:90px;height:90px;border-radius:10px;object-fit:cover;background:#d4dee3}
+.cart-tile .info{flex:1}
+.cart-summary{background:#fff;margin-top:20px;padding:20px 24px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px rgba(74,109,124,.04)}
+
+/* 订单 */
+.section-title{font-size:24px;font-weight:800;color:#1a2d35;margin-bottom:20px}
+.order-timeline{display:flex;flex-direction:column;gap:16px}
+.order-block{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(74,109,124,.04)}
+.order-block .order-head{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:#f4f7f9}
+.order-block .order-core{padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+.order-block .order-actions{padding:12px 20px;display:flex;gap:8px;border-top:1px solid #e8edf2}
+
+/* 表单 */
+.form-center{max-width:480px;margin:60px auto;background:#fff;padding:36px;border-radius:20px;box-shadow:0 8px 32px rgba(74,109,124,.08)}
+.form-center h2{font-size:24px;font-weight:800;color:#1a2d35;text-align:center;margin-bottom:24px}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;margin-bottom:5px;font-weight:700;font-size:12px;color:#4a5a65;text-transform:uppercase;letter-spacing:.5px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:2px solid #d8e0e6;border-radius:10px;font-size:14px;outline:none;transition:.2s;background:#fff}
+.form-group input:focus,.form-group select:focus{border-color:#4a6d7c}
+.form-group textarea{min-height:80px;resize:vertical}
+.form-row{display:flex;gap:16px}.form-row .form-group{flex:1}
+.form-footer{text-align:center;margin-top:16px;font-size:13px;color:#7f8c9b}
+
+/* Tab切换 */
+.tab-bar{display:flex;margin-bottom:24px;background:#fff;border-radius:14px;padding:4px;box-shadow:0 2px 8px rgba(74,109,124,.04)}
+.tab-btn{flex:1;padding:12px;border:none;background:transparent;cursor:pointer;font-size:14px;font-weight:600;border-radius:10px;transition:.2s;color:#7f8c9b}
+.tab-btn.active{background:#4a6d7c;color:#fff}
+
+/* 标签 */
+.tag{display:inline-block;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600}
+.tag-unpaid{background:#fff3e0;color:#e67e22}
+.tag-unshipped{background:#dbeafe;color:#1e40af}
+.tag-shipped{background:#dcfce7;color:#166534}
+.tag-received{background:#f3e8ff;color:#6b21a8}
+
+/* 提示 */
+.alert{padding:12px 16px;border-radius:10px;margin-bottom:16px;font-size:13px}
+.alert-error{background:#ffeaea;color:#c0392b;border-left:4px solid #e74c3c}
+.alert-success{background:#eafff0;color:#27ae60;border-left:4px solid #27ae60}
+
+.empty-state{text-align:center;padding:80px 20px;color:#7f8c9b}
+.empty-state .icon{font-size:64px;margin-bottom:16px}
+
+@media(max-width:768px){
+.hero{padding:40px 20px}.hero h1{font-size:28px}.hero-search{flex-direction:column}
+.nav-bar{padding:0 20px}.card-grid{grid-template-columns:1fr}
+.detail-hero{flex-direction:column}.detail-hero .detail-img{width:100%;height:280px}
+.detail-body{flex-direction:column;padding:20px}.detail-body .detail-action{width:100%}
+.cart-grid{grid-template-columns:1fr}
+}
