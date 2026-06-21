@@ -1,0 +1,64 @@
+/* wdb Admin: 极简顶栏 · 卡片面板 */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#faf8f5;color:#4a3228}
+a{text-decoration:none}
+
+/* 管理顶栏 */
+.admin-top{background:linear-gradient(135deg,#3d1a10,#5a2516);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:0 32px;height:56px;position:sticky;top:0;z-index:100}
+.admin-top h2{font-size:17px;font-weight:700;letter-spacing:.5px}
+.admin-top ul{display:flex;gap:4px;list-style:none}
+.admin-top ul a{color:rgba(255,255,255,.65);padding:7px 16px;border-radius:20px;font-size:13px;font-weight:500;transition:.2s}
+.admin-top ul a:hover,.admin-top ul a.active{background:rgba(255,255,255,.12);color:#fff}
+
+.admin-main{padding:28px 32px;max-width:1000px;margin:0 auto}
+.admin-main h1{font-size:24px;font-weight:800;color:#3d1a10;margin-bottom:22px}
+
+/* 统计 */
+.panel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px}
+.panel{background:#fff;padding:22px;border-radius:14px;box-shadow:0 1px 3px rgba(0,0,0,.03);text-align:center}
+.panel .big-num{font-size:38px;font-weight:800;color:#d45d3e;margin-bottom:4px}
+.panel .small-label{font-size:11px;color:#a08070;text-transform:uppercase;letter-spacing:.5px}
+
+/* 搜索行 */
+.toolbar{display:flex;gap:10px;margin-bottom:22px;align-items:center}
+.toolbar input{flex:1;padding:11px 18px;border:2px solid #f0d8cc;border-radius:12px;font-size:14px;outline:none;transition:.2s}
+.toolbar input:focus{border-color:#d45d3e}
+.toolbar select{padding:11px 16px;border:2px solid #f0d8cc;border-radius:12px;font-size:13px;outline:none;background:#fff;color:#7a5a4a}
+.toolbar button{padding:11px 22px}
+
+/* 表格 */
+.data-table{width:100%;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.03)}
+.data-table th{background:#fef7f3;color:#7a5a4a;padding:13px 16px;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.5px;text-align:left;border-bottom:2px solid #f0d8cc}
+.data-table td{padding:13px 16px;border-bottom:1px solid #fdf3ef;font-size:13px}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:hover td{background:#fef7f3}
+
+/* 表单面板 */
+.form-sheet{background:#fff;padding:26px;border-radius:14px;box-shadow:0 1px 3px rgba(0,0,0,.03);margin-bottom:22px;max-width:650px}
+.form-sheet h3{font-size:17px;font-weight:700;color:#3d1a10;margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid #fdf3ef}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;margin-bottom:5px;font-weight:700;font-size:11px;color:#7a5a4a;text-transform:uppercase}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 16px;border:2px solid #f0d8cc;border-radius:10px;font-size:14px;outline:none;transition:.2s}
+.form-group input:focus,.form-group select:focus{border-color:#d45d3e}
+.form-group textarea{min-height:80px;resize:vertical}
+.form-row{display:flex;gap:12px}.form-row .form-group{flex:1}
+
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 20px;border:none;border-radius:25px;cursor:pointer;font-size:13px;font-weight:600;text-decoration:none;transition:.2s}
+.btn-primary{background:#d45d3e;color:#fff}.btn-primary:hover{background:#b34930;box-shadow:0 3px 12px rgba(212,93,62,.25)}
+.btn-outline{background:transparent;border:2px solid #d45d3e;color:#d45d3e;border-radius:25px}.btn-outline:hover{background:#d45d3e;color:#fff}
+.btn-danger{background:#e74c3c;color:#fff;border-radius:25px}.btn-danger:hover{background:#c0392b}
+.btn-success{background:#27ae60;color:#fff;border-radius:25px}.btn-success:hover{background:#219a52}
+.btn-sm{padding:4px 12px;font-size:11px}.btn-block{display:block;width:100%;text-align:center;justify-content:center}
+
+.tag{display:inline-block;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600}
+.tag-unpaid{background:#fff3e0;color:#e67e22}
+.tag-unshipped{background:#dbeafe;color:#1e40af}
+.tag-shipped{background:#dcfce7;color:#166534}
+.tag-received{background:#f3e8ff;color:#6b21a8}
+
+.alert{padding:11px 15px;border-radius:10px;margin-bottom:14px;font-size:12px}
+.alert-error{background:#ffeaea;color:#c0392b;border-left:3px solid #e74c3c}
+.alert-success{background:#eafff0;color:#27ae60;border-left:3px solid #27ae60}
+.mt-20{margin-top:20px}
+
+@media(max-width:768px){.admin-top{padding:0 16px}.admin-main{padding:20px 16px}.panel-grid{grid-template-columns:repeat(2,1fr)}}
